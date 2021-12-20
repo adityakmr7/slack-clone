@@ -51,8 +51,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 export default function AppContainer({ children }) {
-  const data = useAppState();
-  console.log('data', data);
+  const {state} = useAppState();
+  console.log('data', state);
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -78,8 +78,19 @@ export default function AppContainer({ children }) {
           />
         </Search>
         <Box>
-          <Box>
-            <img src="" alt="profile"/>
+          <Box marginTop={0.5} marginX={2}>
+          <Box sx={{
+              backgroundColor:'green',
+              width:'10px',
+              height:'10px',
+              position:'absolute',
+              right:15,
+              bottom:5,
+              borderRadius:'5px'
+
+            }}/>
+            <img style={{borderRadius:'5px',width:'30px',height:'30px'}} src={state.user.user.photoURL} alt="profile"/>
+           
           </Box>
         </Box>
         </Box>
@@ -90,9 +101,9 @@ export default function AppContainer({ children }) {
       </AppBar>
       <SideBar />
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Toolbar />
+            <Box marginTop={2}/>
         {children}
-      </Box>
+    </Box>
     </Box>
   );
 }

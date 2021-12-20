@@ -1,3 +1,4 @@
+import { Box } from '@mui/system';
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { ChatField, DisplayChat } from '../components'
@@ -26,7 +27,9 @@ function Dashboard() {
     return (
        <AppContainer>
 
-          <DisplayChat/>
+          <Box>
+              <h1>Welcome to the Slack Clone</h1>
+          </Box>
           <ChatField/>
 
        </AppContainer>

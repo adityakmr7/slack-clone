@@ -72,7 +72,6 @@ function SideBar() {
           justifyContent={"space-between"}
           alignItems={"center"}
         >
-          <Typography>Civo Community</Typography>
           <IconButton>
             <Edit />
           </IconButton>
@@ -80,34 +79,42 @@ function SideBar() {
         <Divider />
         <Box marginY={2} marginX={2}>
           <Typography variant="body1"> Get Started</Typography>
-          <Typography variant="body2">Next:Add a profile photo</Typography>
+          <Typography variant="body2">Next : Add a profile photo</Typography>
         </Box>
+        <Divider />
         <Box
           marginY={1}
           display={"flex"}
           alignItems={"center"}
-          justifyContent={"space-around"}
+         marginX={3}
+        
         >
           <ConnectingAirportsIcon />
-          <Typography>Slack Connect</Typography>
+          <Typography sx={{marginLeft:1}}>Slack Connect</Typography>
         </Box>
         <Box
           marginY={1}
           display={"flex"}
           alignItems={"center"}
-          justifyContent={"space-around"}
+          marginLeft={3}
         >
           <MoreVertIcon />
-          <Typography>Browse Slack</Typography>
+          <Typography sx={{marginLeft:1}}>Browse Slack</Typography>
         </Box>
+        <Divider />
         <Box
           display={"flex"}
           alignItems={"center"}
-          justifyContent={"space-around"}
+          marginLeft={3}
           marginY={1}
         >
           <IconButton onClick={handleChannelList}>
-            <KeyboardArrowDownIcon color="white" />
+            <KeyboardArrowDownIcon
+              sx={{
+                color: "#fff",
+              }}
+              color="white"
+            />
           </IconButton>
           <Typography>Channels</Typography>
         </Box>
@@ -122,24 +129,38 @@ function SideBar() {
                   key={item.id}
                   onClick={() => handleChannelDetail(item.id)}
                   display={"flex"}
-                  justifyContent={"space-between"}
+                 
                   alignItems={"center"}
                   sx={{
                     cursor: "pointer",
                   }}
                 >
                   <Typography>#</Typography>
-                  <Typography>{item.name}</Typography>
+                  <Typography sx={{marginLeft:2}}>{item.name}</Typography>
                 </Box>
               );
             })}
 
             <Box
               display={"flex"}
-              justifyContent={"space-around"}
               alignItems={"center"}
+              marginLeft={3}
             >
-              <IconButton onClick={handleAddChannel}>+</IconButton>
+              <Box
+                sx={{
+                  backgroundColor: "#ECEFF1",
+                  opacity:0.2,
+                  width: 20,
+                  height: 20,
+                  display: "flex",
+                  alignItems: "center",
+                  marginX:2,
+                  cursor:'pointer'
+                }}
+                onClick={handleAddChannel}
+              >
+                <Typography >+</Typography>
+              </Box>
               <Typography>Add Channels</Typography>
             </Box>
           </Box>

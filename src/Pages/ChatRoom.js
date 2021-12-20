@@ -30,6 +30,13 @@ function ChatRoom() {
         );
       // const d = doc(db, "rooms", roomId);
     };
+    if(!roomId) {
+      return (
+        <AppContainer>
+          <h1>Welcome to the Chat Room</h1>
+        </AppContainer>
+      )
+    }
     return (
         <AppContainer>
             <DisplayChat roomDetail={roomDetail} messages={roomMessages} channelId={roomId}/>

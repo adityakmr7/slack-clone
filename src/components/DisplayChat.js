@@ -2,12 +2,12 @@ import { Avatar, Box, Divider, Typography } from "@mui/material";
 import React from "react";
 
 function DisplayChat({ roomDetail, messages }) {
-  console.log('roomDe', roomDetail);
+  
   return (
     <Box>
       <Box>
         <Box display={"flex"} alignItems={"center"}>
-          <Typography># {roomDetail.name}</Typography>
+          <Typography># {roomDetail?.name}</Typography>
          
         </Box>
         <Divider />

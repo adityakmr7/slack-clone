@@ -24,7 +24,9 @@ function Login() {
         navigate('/')
       })
       .catch((error) => {
-        alert(error.mesage);
+        console.log('ERROR:',error)
+        alert('Something Went Wrong! Please try again');
+
       });
   };
   return (
